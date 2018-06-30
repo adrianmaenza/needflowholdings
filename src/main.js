@@ -10,6 +10,7 @@ import home from './components/pages/Home.vue'
 import about from './components/pages/About.vue'
 import contact from './components/pages/Contact.vue'
 
+
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
