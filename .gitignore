@@ -1,4 +1,6 @@
+# I hate this ds file
 .DS_Store
+
 node_modules
 /dist
 
