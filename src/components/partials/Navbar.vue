@@ -1,12 +1,26 @@
 <template>
-  <v-toolbar>
+  <v-toolbar dark color="primary">
     <v-toolbar-side-icon></v-toolbar-side-icon>
-    <v-toolbar-title>Title</v-toolbar-title>
+    <!-- Replace with logo -->
+    <v-toolbar-title>{{ title }}</v-toolbar-title>
     <v-spacer></v-spacer>
     <v-toolbar-items class="hidden-sm-and-down">
-      <v-btn flat :to="{path: '/'}">Home</v-btn>
-      <v-btn flat :to="{path: '/about'}">About</v-btn>
-      <v-btn flat :to="{path: '/contact'}">Contact</v-btn>
+      <v-btn v-for="menuItem in menuItems" v-bind:key="menuItem.id" flat :to="{path: menuItem.path}">{{ menuItem.name }}</v-btn>
     </v-toolbar-items>
   </v-toolbar>
 </template>
+
+<script>
+export default {
+  data(){
+    return {
+      title: 'Needflow Holdings',
+      menuItems: [
+        {name: 'Home', path: '/'},
+        {name: 'About Us', path: '/about'},
+        {name: 'Contact', path: '/contact'},
+      ]
+    }
+  }
+}
+</script>
