@@ -7,7 +7,7 @@ import VueRouter from 'vue-router'
 
 // Pages
 import home from './components/pages/Home.vue'
-import about from './components/pages/About.vue'
+import finance from './components/pages/Finance.vue'
 import contact from './components/pages/Contact.vue'
 
 
@@ -16,7 +16,7 @@ Vue.use(VueRouter)
 
 const routes = [
   {path : '/', component: home},
-  {path : '/about', component: about},
+  {path : '/finance', component: finance},
   {path : '/contact', component: contact},
 ]
 

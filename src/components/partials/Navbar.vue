@@ -17,7 +17,7 @@ export default {
       title: 'Needflow Holdings',
       menuItems: [
         {name: 'Home', path: '/'},
-        {name: 'About Us', path: '/about'},
+        {name: 'Needflow Finance', path: '/finance'},
         {name: 'Contact', path: '/contact'},
       ]
     }
