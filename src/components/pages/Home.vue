@@ -1,7 +1,7 @@
 <template>
     <v-container
     >
-        <v-layout row wrap>
+        <v-layout row wrap class="mb-2">
             <v-flex sm12>
                 <h1 class="mb-4">Needflow Holdings</h1>
                 <p>
@@ -26,11 +26,44 @@
                         </div>
                     </v-card-title>
                     <v-card-actions>
-                        <v-btn flat color="accent">More</v-btn>
+                        <v-btn flat color="accent" @click.stop="showProfile(profile.index)">More</v-btn>
                     </v-card-actions>
                 </v-card>
             </v-flex>
         </v-layout>
+
+        <v-dialog
+            v-model="dialog"
+            width="500"
+            >
+
+            <v-card>
+                <v-card-title
+                class="white--text headline accent"
+                primary-title
+                >
+                {{ dialogTitle }}
+                </v-card-title>
+
+                <v-card-text>
+                {{ dialogText }}
+                </v-card-text>
+
+                <v-divider></v-divider>
+
+                <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                    color="accent"
+                    flat
+                    @click.stop="dialog = false"
+                >
+                    Dismiss
+                </v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </v-container>
 </template>
 
@@ -39,15 +72,18 @@
 export default {
     data(){
         return {
+            dialog: false,
             profiles: [
                 {
-                    name: 'Osacar Kubara',
+                    index: 0,
+                    name: 'Oscar Kubara',
                     about: `
-                        Mr Oscar Kubara is the visionary and an innovative entrepreneur who holds a MSc(Eng) and BSc(Hons) in Control Systems Engineering. A pioneer in his generation, he is the embodiment of true African empowerment. 
+                        Mr Oscar Kubara is the visionary and an innovative entrepreneur who holds a MSc(Eng) and BSc(Hons) in Control Systems Engineering. A pioneer in his generation, he is the embodiment of true|showProfile African empowerment. 
                         He has over 30years industry experience spanning all levels of administration and management. He is founder and Executive Chairman of Needflow Holdings.
                     `
                 },
                 {
+                    index: 1,
                     name: 'Mr Anesu Kubara',
                     about: `
                         Mr Anesu Kubara is a director who sits on the board of several other regional corporations. He is a firm believer in the positive impact and profitability of valuable relationships and his passion lies solely 
@@ -60,12 +96,16 @@ export default {
                         reputation management and customer service excellence.
                     `
                 }
-            ]
+            ],
+            dialogTitle: '',
+            dialogText: ''
         }
     },
     methods: {
-        trimPreview: () => {
-            console.log('Triming');
+        showProfile: function (index) {
+            this.dialog = true;
+            this.dialogTitle = this.profiles[index].name;
+            this.dialogText = this.profiles[index].about;
         }
     },
     mounted(){

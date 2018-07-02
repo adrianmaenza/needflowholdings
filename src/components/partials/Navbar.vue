@@ -1,6 +1,6 @@
 <template>
   <v-toolbar dark color="primary">
-    <v-toolbar-side-icon></v-toolbar-side-icon>
+    <v-toolbar-side-icon class="hidden-lg-and-up"></v-toolbar-side-icon>
     <!-- Replace with logo -->
     <v-toolbar-title>{{ title }}</v-toolbar-title>
     <v-spacer></v-spacer>

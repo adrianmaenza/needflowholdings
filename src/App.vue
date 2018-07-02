@@ -5,6 +5,7 @@
     <v-content>
       <router-view></router-view>
     </v-content>
+    <botton-nav></botton-nav>
   </v-app>
 </template>
 
@@ -12,12 +13,14 @@
 
 import Navbar from './components/partials/Navbar.vue'
 import Banner from './components/partials/Banner.vue'
+import BottonNav from './components/partials/BottomNav.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Banner
+    Banner,
+    BottonNav
   },
   data () {
     return {
