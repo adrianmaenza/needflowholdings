@@ -14,13 +14,15 @@
 import Navbar from './components/partials/Navbar.vue'
 import Banner from './components/partials/Banner.vue'
 import BottonNav from './components/partials/BottomNav.vue'
+import SideNav from './components/partials/SideNav.vue'
 
 export default {
   name: 'App',
   components: {
     Navbar,
     Banner,
-    BottonNav
+    BottonNav,
+    SideNav
   },
   data () {
     return {
